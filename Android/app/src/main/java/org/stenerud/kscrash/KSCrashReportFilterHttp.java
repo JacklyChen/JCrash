@@ -1,25 +1,3 @@
-//
-//  Copyright (c) 2017 Karl Stenerud. All rights reserved.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall remain in place
-// in this source code.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-//
-
 package org.stenerud.kscrash;
 
 import java.io.BufferedReader;
@@ -30,6 +8,10 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+
+
+
 
 /**
  * Send reports over HTTP.
@@ -45,6 +27,16 @@ import java.util.Map;
  * Output: byte[]
  */
 public class KSCrashReportFilterHttp implements KSCrashReportFilter {
+
+    private URL url;
+    private String charset;
+    private String filePrefix;
+    private String fileExtension;
+    private Map<String, String> requestProperties = new HashMap<String, String>();
+    private Map<String, String> stringFields = new HashMap<String, String>();
+    private Map<String, byte[]> dataFields = new HashMap<String, byte[]>();
+
+
 
     /**
      * Constructor.
@@ -64,7 +56,7 @@ public class KSCrashReportFilterHttp implements KSCrashReportFilter {
     }
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @param url The URL to post the reports to.
      * @param filePrefix The prefix for the file names
@@ -123,14 +115,6 @@ public class KSCrashReportFilterHttp implements KSCrashReportFilter {
             throw new KSCrashReportFilteringFailedException(e, reports);
         }
     }
-
-    private URL url;
-    private String charset;
-    private String filePrefix;
-    private String fileExtension;
-    private Map<String, String> requestProperties = new HashMap<>();
-    private Map<String, String> stringFields = new HashMap<>();
-    private Map<String, byte[]> dataFields = new HashMap<>();
 
     private byte[] getBodyWithReports(List<byte[]> reports) throws IOException {
         MultipartPostBody body = new MultipartPostBody(charset);
