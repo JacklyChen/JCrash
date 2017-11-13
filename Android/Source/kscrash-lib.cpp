@@ -1,25 +1,3 @@
-//
-//  Copyright (c) 2017 Karl Stenerud. All rights reserved.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall remain in place
-// in this source code.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-//
-
 #include <jni.h>
 #include <string>
 #include "KSJNI.h"
@@ -32,11 +10,11 @@ static jmethodID java_util_ArrayList_add;
 
 extern "C" JNIEXPORT void JNICALL
 Java_org_stenerud_kscrash_KSCrash_internalReportUserException(JNIEnv *env, jobject instance,
-                                                              jstring name_, jstring reason_,
-                                                              jstring language_, jstring lineOfCode_,
-                                                              jstring stackTraceJSON_,
-                                                              jboolean shouldLogAllThreads,
-                                                              jboolean shouldTerminateProgram) {
+                                                                jstring name_, jstring reason_,
+                                                                jstring language_, jstring lineOfCode_,
+                                                                jstring stackTraceJSON_,
+                                                                jboolean shouldLogAllThreads,
+                                                                jboolean shouldTerminateProgram) {
     const char *name = env->GetStringUTFChars(name_, 0);
     const char *reason = env->GetStringUTFChars(reason_, 0);
     const char *language = env->GetStringUTFChars(language_, 0);
@@ -181,15 +159,16 @@ Java_org_stenerud_kscrash_MainActivity_causeNativeCrash(JNIEnv *env, jobject ins
 }
 
 #import <exception>
-class MyException: public std::exception
-{
+class MyException: public std::exception {
+
 public:
     virtual const char* what() const _GLIBCXX_USE_NOEXCEPT;
 };
-const char* MyException::what() const _GLIBCXX_USE_NOEXCEPT
-{
+
+const char* MyException::what() const _GLIBCXX_USE_NOEXCEPT{
     return "Something bad happened...";
 }
+
 extern "C" JNIEXPORT void JNICALL
 Java_org_stenerud_kscrash_MainActivity_causeCPPException(JNIEnv *env, jobject instance) {
     throw MyException();
