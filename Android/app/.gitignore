@@ -1,1 +1,4 @@
 /build
+.externalNativeBuild
+.externalNativeBuild/cmake/debug
+.externalNativeBuild/cmake/release
