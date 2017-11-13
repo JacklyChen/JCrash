@@ -1,11 +1,11 @@
 # JCrash
-#### Android自定义异常处理模块（Based on KSCrash）  
+#### Android自定义异常处理模块（Based on JCrash）  
 
 Another crash reporter? Why?  
 32-bit and 64-bit mode.  
 Supports all Apple devices, including Apple Watch.   
   
-#### KSCrash  
+#### JCrash  
 Handles errors that can only be caught at the mach level, such as stack overflow.  
 Tracks the REAL cause of an uncaught C++ exception.  
 Handles a crash in the crash handler itself (or in the user crash handler callback).  
@@ -22,7 +22,7 @@ Java exceptions
 Main thread deadlock (experimental)  
 Custom crashes (e.g. from Java languages)  
 
-With zombie tracking enabled, KSCrash will also detect a lost NSException and
+With zombie tracking enabled, JCrash will also detect a lost NSException and
 print its contents. Certain kinds of memory corruption or stack corruption
 crashes can cause the exception to deallocate early, further twarting efforts
 to debug your app, so this feature can be quite handy at times.
@@ -41,7 +41,7 @@ If your main thread deadlocks, your user interface will become unresponsive,
 and the user will have to manually shut down the app (for which there will be
 no crash report). With deadlock detection enabled, a watchdog timer is set up.
 If anything holds the main thread for longer than the watchdog timer duration,
-KSCrash will shut down the app and give you a stack trace showing what the
+JCrash will shut down the app and give you a stack trace showing what the
 main thread was doing at the time.
 
 This is wonderful, but you must be careful: App initialization generally
@@ -60,11 +60,11 @@ Trade off: Deadlock detection, but you must be a lot more careful about what
 
 When an app crashes, there are usually objects and strings in memory that are
 being referenced by the stack, registers, or even exception messages. When
-enabled, KSCrash will introspect these memory regions and store their contents
+enabled, JCrash will introspect these memory regions and store their contents
 in the crash report.
 
 You can also specify a list of classes that should not be introspected by
-setting the **doNotIntrospectClasses** property in KSCrash.
+setting the **doNotIntrospectClasses** property in JCrash.
 
 
 #### Custom crash handling code (onCrash in KSCrash.h)
@@ -76,15 +76,15 @@ However, you must ensure that you only use async-safe code, and above all else
 never call Objective-C code from that method! There are many cases where you
 can get away with doing so anyway, but there are certain classes of crashes
 where handler code that disregards this warning will cause the crash handler
-to crash! Note that if this happens, KSCrash will detect it and write a full
+to crash! Note that if this happens, JCrash will detect it and write a full
 report anyway, though your custom handler code may not fully run.
 
 Trade off: Custom crash handling code, but you must be careful what you put
            in it!
 
 
-#### KSCrash log redirection
+#### JCrash log redirection
 
-This takes whatever KSCrash would have printed to the console, and writes it
-to a file instead. I mostly use this for debugging KSCrash itself, but it could
+This takes whatever JCrash would have printed to the console, and writes it
+to a file instead. I mostly use this for debugging JCrash itself, but it could
 be useful for other purposes, so I've exposed an API for it.
