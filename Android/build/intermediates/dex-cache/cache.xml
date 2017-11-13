@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\383c887a2f1ed1c59e2de315f0dc0cc3dfdcff5f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ba8e8860f7e033c3a503b682337a4bafdf56e6ee">
+        <dex dex="E:\lib\KSCrash\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_471233371eb39a2391e9dead41c232b67953b644\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\b47957afcb3016d351808ad4891fe9fff60e7b7e\output\jars\libs\internal_impl-24.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8c7087216946c546f85a1242a2794c0f271e092c">
+        <dex dex="E:\lib\KSCrash\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.0_47766d39122a3d3a0df03b61d246896c9e4bbdee\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\lib\KSCrash\Android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="E:\lib\KSCrash\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_2d75fa8c034d5bd48027ef450e9da7bd4916956b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\lib\KSCrash\Android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a6d36de747881fd85f61df2b08514761f16f522f">
+        <dex dex="E:\lib\KSCrash\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_c75f0c60eccdb91d9a37899cbe74aaf43d15cb1a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\01d7a8419e35b55bc4ada8677faa5194038612ad\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8c854b30eca6c442fe842e66cd3b58c5dd08996f">
+        <dex dex="E:\lib\KSCrash\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7e08b6171fa7d36d6d8e167db492ed85a05f8b72\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\lib\KSCrash\Android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="E:\lib\KSCrash\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_2d75fa8c034d5bd48027ef450e9da7bd4916956b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\2294a332571f334068087d8b7fc3928f22fb34a5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9340c4f95a4e3916c9ad70296e24576743743712">
+        <dex dex="E:\lib\KSCrash\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f8d8f931773946e98b46f28ba2271b6055677ec4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\lib\KSCrash\Android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a6d36de747881fd85f61df2b08514761f16f522f">
+        <dex dex="E:\lib\KSCrash\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_c75f0c60eccdb91d9a37899cbe74aaf43d15cb1a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\b47957afcb3016d351808ad4891fe9fff60e7b7e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e096a5d8343cc9c5a9f6eded36bd0f4c82f8c83e">
+        <dex dex="E:\lib\KSCrash\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ab239a2db3fd45be99a7101cd0f371f07c357d3e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\ProgramFiles\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.0\support-annotations-24.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8a23146e1a8c7cb4758e3d3f62449213f1e51f67">
+        <dex dex="E:\lib\KSCrash\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.1.0_ec65f5394d5a624d674e255f41f0e132b081f828\classes.dex" />
+    </item>
+
+</items>

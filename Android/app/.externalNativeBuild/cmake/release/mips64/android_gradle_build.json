@@ -1,0 +1,231 @@
+
+{
+	"buildFiles" : [ "E:/lib/KSCrash/Android/app/CMakeLists.txt" ],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"D:\\ProgramFiles\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\lib\\KSCrash\\Android\\app\\.externalNativeBuild\\cmake\\release\\mips64 --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"kscrash-lib-Release-mips64" : 
+		{
+			"abi" : "mips64",
+			"artifactName" : "kscrash-lib",
+			"buildCommand" : "D:\\ProgramFiles\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build E:\\lib\\KSCrash\\Android\\app\\.externalNativeBuild\\cmake\\release\\mips64 --target kscrash-lib",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64  -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\mips64\\include -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/kscrash-lib.cpp",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/KSCrashCachedData.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64  -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\mips64\\include -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/KSJNI.cpp",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/monitors/KSCrashMonitor_System.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/tools/KSCPU.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/tools/KSDebug.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/tools/KSDynamicLinker.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64  -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\mips64\\include -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/tools/KSID.cpp",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/tools/KSMachineContext.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/tools/KSMemory.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/tools/KSStackCursor_SelfThread.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/tools/KSSymbolicator.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Android/Source/tools/KSThread.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/KSCrashC.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/KSCrashReport.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/KSCrashReportFixer.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/KSCrashReportStore.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Monitors/KSCrashMonitor.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Monitors/KSCrashMonitor_AppState.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64  -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\mips64\\include -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Monitors/KSCrashMonitor_CPPException.cpp",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Monitors/KSCrashMonitor_Signal.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Monitors/KSCrashMonitor_User.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Monitors/KSCrashMonitorType.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Tools/KSDate.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64  -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\mips64\\include -isystem E:\\download\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Tools/KSDemangle_CPP.cpp",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Tools/KSFileUtils.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Tools/KSJSONCodec.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Tools/KSLogger.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Tools/KSSignalInfo.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Tools/KSStackCursor.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Tools/KSStackCursor_Backtrace.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Tools/KSStackCursor_MachineContext.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain E:/download/android-ndk-r13b/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/download/android-ndk-r13b/platforms/android-21/arch-mips64 -Dkscrash_lib_EXPORTS -I..\\..\\..\\..\\..\\Source -I..\\..\\..\\..\\..\\Source\\monitors -I..\\..\\..\\..\\..\\Source\\tools -I..\\..\\..\\..\\..\\..\\Source\\KSCrash -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Monitors -I..\\..\\..\\..\\..\\..\\Source\\KSCrash\\Recording\\Tools  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "E:/lib/KSCrash/Source/KSCrash/Recording/Tools/KSString.c",
+					"workingDirectory" : "E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/release/mips64"
+				}
+			],
+			"output" : "E:/lib/KSCrash/Android/app/build/intermediates/cmake/release/obj/mips64/libkscrash-lib.so",
+			"toolchain" : "3138626681"
+		}
+	},
+	"toolchains" : 
+	{
+		"3138626681" : 
+		{
+			"cCompilerExecutable" : "E:/download/android-ndk-r13b/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "E:/download/android-ndk-r13b/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

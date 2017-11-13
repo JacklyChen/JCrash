@@ -1,0 +1,15 @@
+Executable : D:\ProgramFiles\Android\sdk\cmake\3.6.4111459\bin\cmake.exe
+arguments : 
+-HE:\lib\KSCrash\Android\app
+-BE:\lib\KSCrash\Android\app\.externalNativeBuild\cmake\release\armeabi-v7a
+-GAndroid Gradle - Ninja
+-DANDROID_ABI=armeabi-v7a
+-DANDROID_NDK=E:\download\android-ndk-r13b
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=E:\lib\KSCrash\Android\app\build\intermediates\cmake\release\obj\armeabi-v7a
+-DCMAKE_BUILD_TYPE=Release
+-DCMAKE_MAKE_PROGRAM=D:\ProgramFiles\Android\sdk\cmake\3.6.4111459\bin\ninja.exe
+-DCMAKE_TOOLCHAIN_FILE=E:\download\android-ndk-r13b\build\cmake\android.toolchain.cmake
+-DANDROID_PLATFORM=android-15
+-DCMAKE_CXX_FLAGS=-fexceptions
+jvmArgs : 
+
