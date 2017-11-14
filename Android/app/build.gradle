@@ -1,9 +1,13 @@
+//打混淆包时
+//apply plugin: 'com.android.library'
+//跑demo时
 apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '25.0.1'
     defaultConfig {
+        //跑demo时打开
         applicationId "org.stenerud.kscrash"
         minSdkVersion 9
         targetSdkVersion 22
@@ -17,7 +21,8 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            //默认打混淆包
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -36,3 +41,18 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:support-v4:23.1.0'
 }
+
+
+task clearJar(type: Delete) {
+    delete 'build/libs/CrashSDK.jar'  //这行表示如果你已经打过一次包了，再进行打包则把原来的包删掉
+}
+
+
+task makeJar(type: Copy) {
+    from('build/intermediates/bundles/default/')
+    into('build/libs/')
+    include('classes.jar')
+    rename ('classes.jar', 'CrashSDK.jar')
+}
+
+makeJar.dependsOn(build)
