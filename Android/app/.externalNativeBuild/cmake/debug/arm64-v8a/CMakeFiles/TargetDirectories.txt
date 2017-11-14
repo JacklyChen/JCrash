@@ -1,3 +1,0 @@
-E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
-E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/kscrash-lib.dir
-E:/lib/KSCrash/Android/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir
