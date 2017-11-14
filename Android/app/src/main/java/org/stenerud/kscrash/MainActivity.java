@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
-            KSCrashInstallation installation = new KSCrashInstallationStandard(this, new URL("http://10.0.2.2:5000/crashreport"));
+            KSCrashInstallation installation = new KSCrashInstallationStandard(this,
+                    new URL("http://10.0.2.2:5000/crashreport"));
 //            KSCrashInstallation installation = new KSCrashInstallationEmail(this, "nobody@nowhere.com");
             installation.install();
             installation.sendOutstandingReports();
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     public native String stringFromTimestamp(long timestamp);
     private native void causeNativeCrash();
     private native void causeCPPException();
+
 
     private void sendFakeReports() {
         try {
