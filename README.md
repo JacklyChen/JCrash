@@ -1,9 +1,5 @@
 # JCrash
 #### Android自定义异常处理模块（Based on JCrash）  
-
-Another crash reporter? Why?  
-32-bit and 64-bit mode.  
-Supports all Apple devices, including Apple Watch.   
   
 #### JCrash  
 Handles errors that can only be caught at the mach level, such as stack overflow.  
@@ -44,13 +40,13 @@ If anything holds the main thread for longer than the watchdog timer duration,
 JCrash will shut down the app and give you a stack trace showing what the
 main thread was doing at the time.
 
-This is wonderful, but you must be careful: App initialization generally
-occurs on the main thread. If your initialization code takes longer than the
-watchdog timer, your app will be forcibly shut down during start up! If you
-enable this feature, you MUST ensure that NONE of your normally running code
-holds the main thread for longer than the watchdog value! At the same time,
-you'll want to set the timer to a low enough value that the user doesn't
-become impatient and shut down the app manually before the watchdog triggers!
+#### This is wonderful, but you must be careful: 
+App initialization generally occurs on the main thread. If your initialization 
+code takes longer than the watchdog timer, your app will be forcibly shut down
+during start up! If you enable this feature, you MUST ensure that NONE of your 
+normally running code holds the main thread for longer than the watchdog value! 
+At the same time,you'll want to set the timer to a low enough value that the user 
+doesn't become impatient and shut down the app manually before the watchdog triggers!
 
 Trade off: Deadlock detection, but you must be a lot more careful about what
            runs on the main thread!
@@ -72,15 +68,13 @@ setting the **doNotIntrospectClasses** property in JCrash.
 If you want to do some extra processing after a crash occurs (perhaps to add
 more contextual data to the report), you can do so.
 
-However, you must ensure that you only use async-safe code, and above all else
-never call Objective-C code from that method! There are many cases where you
+However, you must ensure that you only use async-safe code! There are many cases where you
 can get away with doing so anyway, but there are certain classes of crashes
 where handler code that disregards this warning will cause the crash handler
 to crash! Note that if this happens, JCrash will detect it and write a full
 report anyway, though your custom handler code may not fully run.
 
-Trade off: Custom crash handling code, but you must be careful what you put
-           in it!
+Trade off: Custom crash handling code, but you must be careful what you put in it!
 
 
 #### JCrash log redirection
