@@ -1,5 +1,5 @@
 # JCrash
-#### Android自定义异常处理模块（Based on JCrash）  
+#### Android自定义异常处理模块（Based on KSCrash）  
   
 #### JCrash  
 Handles errors that can only be caught at the mach level, such as stack overflow.  
