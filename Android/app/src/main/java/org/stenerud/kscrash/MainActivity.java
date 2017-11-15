@@ -20,7 +20,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+
+    private final String TAG = "MainActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,39 +36,52 @@ public class MainActivity extends AppCompatActivity {
             //todo 日志上传服务器
             KSCrashInstallation installation = new KSCrashInstallationStandard(this,
                     new URL("http://10.0.2.2:5000/crashreport"));
-//            KSCrashInstallation installation = new KSCrashInstallationEmail(this, "nobody@nowhere.com");
+            //KSCrashInstallation installation = new KSCrashInstallationEmail(this, "nobody@nowhere.com");
             installation.install();
+            //统计SDK拿到后进行封装符合格式的数据并进行存储
+            installation.setIDealWithCrash(new KSCrash.IDealWithCrash(){  //属于耗时操作
+                @Override
+                public void dealWithCrash(Throwable summary, String detail) {
+                    Log.e(TAG, "dealWithCrash summary----------" + summary.toString());
+                    Log.e(TAG, "dealWithCrash detail----------" + detail);
+                }
+            });
             installation.sendOutstandingReports();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         final Button javaButton = (Button) findViewById(R.id.button_java);
-        javaButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                sendFakeReports();
-                throw new IllegalArgumentException("Argument was illegal or something");
-            }
-        });
+        javaButton.setOnClickListener(this);
 
         final Button nativeButton = (Button) findViewById(R.id.button_native);
-        nativeButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                causeNativeCrash();
-            }
-        });
+        nativeButton.setOnClickListener(this);
 
         final Button cppButton = (Button) findViewById(R.id.button_cpp);
-        cppButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                causeCPPException();
-            }
-        });
+        cppButton.setOnClickListener(this);
 
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         String result = stringFromTimestamp(0);
         tv.setText(result);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button_native:
+                causeNativeCrash();
+                break;
+            case R.id.button_cpp:
+                causeCPPException();
+                break;
+            case R.id.button_java:
+                sendFakeReports();
+                throw new IllegalArgumentException("Argument was illegal or something");
+            default:
+                break;
+        }
     }
 
     /**
