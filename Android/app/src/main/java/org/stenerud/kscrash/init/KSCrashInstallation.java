@@ -14,6 +14,8 @@ import java.util.List;
 
 
 
+
+
 /**
  * 初始化操作工具类
  * The installation is the primary user-facing interface to the crash handling system.
@@ -41,6 +43,14 @@ public class KSCrashInstallation {
      */
     public void install() throws IOException {
         KSCrash.getInstance().install(mContext);
+    }
+
+    /**
+     * 设置自定义处理crash
+     * @param iDealWithCrash
+     */
+    public void setIDealWithCrash(KSCrash.IDealWithCrash iDealWithCrash){
+        KSCrash.getInstance().setIDealWithCrash(iDealWithCrash);
     }
 
     /**

@@ -26,6 +26,13 @@ public class KSCrashReportFilterPipeline implements KSCrashReportFilter {
         runNextFilter(reports, filters.iterator(), completionCallback);
     }
 
+    /**
+     * 逐个执行filter
+     * @param incomingReports
+     * @param iterator
+     * @param finalCallback
+     * @throws KSCrashReportFilteringFailedException
+     */
     private void runNextFilter(List incomingReports,
                                final Iterator<KSCrashReportFilter> iterator,
                                final CompletionCallback finalCallback) throws KSCrashReportFilteringFailedException {
