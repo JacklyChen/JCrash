@@ -1,15 +1,14 @@
+
 //打混淆包时
-//apply plugin: 'com.android.library'
-//跑demo时
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+
+
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '25.0.1'
+    buildToolsVersion '25.0.0'
     defaultConfig {
-        //跑demo时打开
-        applicationId "org.stenerud.kscrash"
-        minSdkVersion 9
+        minSdkVersion 9   //jenkins服务器打包
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -19,11 +18,22 @@ android {
             }
         }
     }
+
+    //针对onesdk的接入版本不能用最新
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
     buildTypes {
         release {
             //默认打混淆包
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
         }
     }
     externalNativeBuild {
