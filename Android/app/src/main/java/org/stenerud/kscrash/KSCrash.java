@@ -1,6 +1,7 @@
 package org.stenerud.kscrash;
 
 import android.content.Context;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,18 +23,6 @@ public enum KSCrash {
 
     INSTANCE;
 
-    /**
-     * 用户自定义处理crash的接口
-     */
-    public interface IDealWithCrash{
-
-        /**
-         * 处理crash日志的回调接口
-         * @param summary 异常的精简信息
-         * @param detail  异常的详细信息
-         */
-        void dealWithCrash(Throwable summary, String detail);
-    }
 
     private IDealWithCrash mIDealWithCrash;
 
@@ -74,6 +63,7 @@ public enum KSCrash {
     }
 
     static {
+        Log.e("KSCrash---------", "loadlibrary");
         System.loadLibrary("kscrash-lib");
         initJNI();
     }
@@ -92,9 +82,10 @@ public enum KSCrash {
      * @param context The application context.
      */
     public void install(Context context) throws IOException {
-        String appName = context.getApplicationInfo().processName;
-        File installDir = new File(context.getCacheDir().getAbsolutePath(), "KSCrash");
-        install(appName, installDir.getCanonicalPath());
+        //todo 初始化jni异常的监听
+        //String appName = context.getApplicationInfo().processName;
+        //File installDir = new File(context.getCacheDir().getAbsolutePath(), "KSCrash");
+        // installJNI(appName, installDir.getCanonicalPath());
 
         // TODO: Put this elsewhere 若应用接入其它的crash第三方sdk，在CrashSDK处理完后抛出异常
         oldUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
@@ -315,7 +306,7 @@ public enum KSCrash {
      * @param appName
      * @param installDir
      */
-    private native void install(String appName, String installDir);
+    private native void installJNI(String appName, String installDir);
 
     /**
      *
