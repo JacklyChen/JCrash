@@ -1,6 +1,9 @@
 
 //打混淆包时
-apply plugin: 'com.android.library'
+//apply plugin: 'com.android.library'
+
+//运行demo
+apply plugin: 'com.android.application'
 
 
 
