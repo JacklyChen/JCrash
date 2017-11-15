@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.stenerud.kscrash.IDealWithCrash;
 import org.stenerud.kscrash.KSCrash;
 import org.stenerud.kscrash.filter.KSCrashReportFilter;
 import org.stenerud.kscrash.filter.KSCrashReportFilterPipeline;
@@ -49,7 +50,7 @@ public class KSCrashInstallation {
      * 设置自定义处理crash
      * @param iDealWithCrash
      */
-    public void setIDealWithCrash(KSCrash.IDealWithCrash iDealWithCrash){
+    public void setIDealWithCrash(IDealWithCrash iDealWithCrash){
         KSCrash.getInstance().setIDealWithCrash(iDealWithCrash);
     }
 
