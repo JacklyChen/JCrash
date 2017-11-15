@@ -1,4 +1,4 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.filter;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,6 +14,9 @@ import java.util.List;
 
 
 /**
+ * 把Crash日志存到文件中 命名规范位 [prefix]-[index].[extension]。
+ * index从1开始
+ *
  * Take the contents of each report and store it in a temp file.
  * The files will be named using incrementing numbers of the form:
  *     [prefix]-[index].[extension]
@@ -32,8 +35,6 @@ public class KSCrashReportFilterCreateTempFiles implements KSCrashReportFilter {
     private String extension;
 
 
-
-
     /**
      * Constructor.
      *
@@ -46,8 +47,10 @@ public class KSCrashReportFilterCreateTempFiles implements KSCrashReportFilter {
         this.prefix = prefix;
         this.extension = extension;
     }
+
     @Override
-    public void filterReports(List reports, CompletionCallback completionCallback) throws KSCrashReportFilteringFailedException {
+    public void filterReports(List reports, CompletionCallback completionCallback)
+            throws KSCrashReportFilteringFailedException {
         try {
             tempDir.mkdir();
             List<File> files = new LinkedList<File>();

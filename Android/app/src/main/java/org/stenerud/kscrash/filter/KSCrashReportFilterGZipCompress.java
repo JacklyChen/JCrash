@@ -1,4 +1,4 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.filter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
@@ -9,20 +9,16 @@ import java.util.List;
 import java.util.zip.GZIPOutputStream;
 
 
-
-
-
-
 /**
- * GZIP compress the reports.
- * <p>
- * Input: String or byte[]
+ * 使用GZIP压缩日志<p>
+ * Input: String or byte[]<p>
  * Output: byte[]
  */
 public class KSCrashReportFilterGZipCompress implements KSCrashReportFilter {
 
     @Override
-    public void filterReports(List reports, CompletionCallback completionCallback) throws KSCrashReportFilteringFailedException {
+    public void filterReports(List reports, CompletionCallback completionCallback)
+            throws KSCrashReportFilteringFailedException {
         List processedReports = new LinkedList();
         try {
             for (Object report : reports) {

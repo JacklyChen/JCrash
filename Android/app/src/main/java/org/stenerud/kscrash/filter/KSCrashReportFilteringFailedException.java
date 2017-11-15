@@ -1,8 +1,11 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.filter;
 
 import java.util.List;
 
 
+/**
+ * 自定义的崩溃日志转换错误异常
+ */
 public class KSCrashReportFilteringFailedException extends Exception {
 
     public final List reports;

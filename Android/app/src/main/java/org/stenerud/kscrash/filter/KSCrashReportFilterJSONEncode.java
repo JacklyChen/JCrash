@@ -1,4 +1,4 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.filter;
 
 import org.json.JSONObject;
 
@@ -7,7 +7,7 @@ import java.util.List;
 
 
 /**
- * 将对象转换为Json字符串工具类
+ * 以Json字符串的形式发送crash日志
  * Encodes objects into a JSON encoded string.
  * <p>
  * Input: JSON encodable object

@@ -13,8 +13,9 @@ import java.util.List;
 import java.util.Map;
 
 
-
-
+/**
+ * CrashSDK的操作工具类
+ */
 public enum KSCrash {
 
     INSTANCE;
@@ -60,6 +61,8 @@ public enum KSCrash {
 
     private static Thread.UncaughtExceptionHandler oldUncaughtExceptionHandler;
 
+
+
     /**
      * Install the crash reporter.
      *
@@ -70,11 +73,11 @@ public enum KSCrash {
         File installDir = new File(context.getCacheDir().getAbsolutePath(), "KSCrash");
         install(appName, installDir.getCanonicalPath());
 
-        // TODO: Put this elsewhere
+        // TODO: Put this elsewhere 若应用接入其它的crash第三方sdk，在CrashSDK处理完后抛出异常
         oldUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
-            public void uncaughtException(Thread t, Throwable e) {
+            public void uncaughtException(Thread t, Throwable e) {   //若有其它的第三方处理则抛出（如OneSDK）
                 KSCrash.this.reportJavaException(e);
                 KSCrash.oldUncaughtExceptionHandler.uncaughtException(t, e);
             }
@@ -83,7 +86,6 @@ public enum KSCrash {
 
     /**
      * Add a custom report to the store.
-     *
      * @param report The report's contents (must be JSON encodable).
      */
     public void addUserReport(Map report) {
@@ -117,7 +119,8 @@ public enum KSCrash {
                                     boolean shouldLogAllThreads,
                                     boolean shouldTerminateProgram) {
         String line = module + " line " + lineOfCode;
-        internalReportUserException(name, reason, language, line, stackTrace.toString(), shouldLogAllThreads, shouldTerminateProgram);
+        internalReportUserException(name, reason, language, line, stackTrace.toString(),
+                shouldLogAllThreads, shouldTerminateProgram);
     }
 
     /**
@@ -201,6 +204,7 @@ public enum KSCrash {
     public native void deleteAllReports();
 
     /**
+     * 设置本地能够存储的最大日志数目
      * Set the maximum number of reports allowed on disk before old ones get deleted.
      *
      * @param maxReportCount The maximum number of reports.
@@ -208,6 +212,7 @@ public enum KSCrash {
     public native void setMaxReportCount(int maxReportCount);
 
     /**
+     * 是否记录内存信息
      * If true, introspect memory contents during a crash.
      * C strings near the stack pointer or referenced by cpu registers or exceptions will be
      * recorded in the crash report, along with their contents.
@@ -217,6 +222,7 @@ public enum KSCrash {
     public native void setIntrospectMemory(boolean shouldIntrospectMemory);
 
     /**
+     * 设置KSLOG是否显示在日志中
      * Set if KSLOG console messages should be appended to the report.
      *
      * @param shouldAddConsoleLogToReport If true, add the log to the report.
@@ -224,6 +230,7 @@ public enum KSCrash {
     public native void setAddConsoleLogToReport(boolean shouldAddConsoleLogToReport);
 
     /**
+     * 判断接入CrashSDK的应用是否存活
      * Notify the crash reporter of the application active state.
      *
      * @param isActive true if the application is active, otherwise false.
@@ -231,6 +238,7 @@ public enum KSCrash {
     public native void notifyAppActive(boolean isActive);
 
     /**
+     * 判断接入CrashSDK的应用是否在前台
      * Notify the crash reporter of the application foreground/background state.
      *
      * @param isInForeground true if the application is in the foreground, false if
@@ -239,27 +247,63 @@ public enum KSCrash {
     public native void notifyAppInForeground(boolean isInForeground);
 
     /**
+     * 判断接入CrashSDK的应用是否终止
      * Notify the crash reporter that the application is terminating.
      */
     public native void notifyAppTerminate();
 
     /**
+     * 通知CrashSDK应用崩溃
      * Notify the crash reporter that the application has crashed.
      */
     public native void notifyAppCrash();
 
+    /**
+     *
+     * @param activeMonitors
+     */
     private native void internalSetActiveMonitors(int activeMonitors);
 
+    /**
+     * 初始化jni
+     */
     private static native void initJNI();
 
+    /**
+     * 初始化CrashSDK，底层设置crash的监听器
+     * @param appName
+     * @param installDir
+     */
     private native void install(String appName, String installDir);
 
+    /**
+     *
+     * @return
+     */
     private native List<String> internalGetAllReports();
 
+    /**
+     *
+     * @param userReportJSON
+     */
     private native void internalAddUserReportJSON(String userReportJSON);
 
+    /**
+     *
+     * @param userInfoJSON
+     */
     private native void internalSetUserInfoJSON(String userInfoJSON);
 
+    /**
+     *
+     * @param name
+     * @param reason
+     * @param language
+     * @param lineOfCode
+     * @param stackTraceJSON
+     * @param shouldLogAllThreads
+     * @param shouldTerminateProgram
+     */
     private native void internalReportUserException(String name,
                                                     String reason,
                                                     String language,

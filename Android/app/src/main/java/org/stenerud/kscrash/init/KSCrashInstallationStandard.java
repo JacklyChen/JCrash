@@ -1,6 +1,11 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.init;
 
 import android.content.Context;
+
+import org.stenerud.kscrash.filter.KSCrashReportFilter;
+import org.stenerud.kscrash.filter.KSCrashReportFilterGZipCompress;
+import org.stenerud.kscrash.filter.KSCrashReportFilterHttp;
+import org.stenerud.kscrash.filter.KSCrashReportFilterJSONEncode;
 
 import java.net.URL;
 import java.util.LinkedList;
@@ -10,13 +15,12 @@ import java.util.List;
 
 
 /**
- * 通过http请求接口上传crash日志
+ * 通过http请求，接口上传crash日志
  */
 public class KSCrashInstallationStandard extends KSCrashInstallation {
 
     /**
-     * Constructor.
-     *
+     * 构造方法
      * @param context A context.
      * @param url The URL to post the reports to.
      */

@@ -1,4 +1,4 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.filter;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import java.util.List;
 
 
 /**
- * 转换日志接口
+ * 通过何种方式上报日志的接口定义
  * <p>
  * The transformed reports are returned via the completion callback.
  * <p>
@@ -19,9 +19,10 @@ public interface KSCrashReportFilter {
      * The callback to call with the filtered reports
      */
     interface CompletionCallback {
+
         /**
+         * 过滤日志完成时受到通知
          * Receive a notification of a completed filter operation.
-         *
          * @param reports The transformed reports.
          * @throws KSCrashReportFilteringFailedException
          */
@@ -29,11 +30,12 @@ public interface KSCrashReportFilter {
     }
 
     /**
+     * 过滤日志
      * Filter some reports.
-     *
      * @param reports            The reports to filter.
      * @param completionCallback The callback to call with the filtered reports.
      * @throws KSCrashReportFilteringFailedException
      */
-    void filterReports(List reports, CompletionCallback completionCallback) throws KSCrashReportFilteringFailedException;
+    void filterReports(List reports, CompletionCallback completionCallback)
+            throws KSCrashReportFilteringFailedException;
 }

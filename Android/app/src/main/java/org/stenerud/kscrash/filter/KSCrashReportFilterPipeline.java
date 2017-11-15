@@ -1,4 +1,4 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.filter;
 
 import java.util.Iterator;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 
 
 /**
+ * 逐个执行通过何种方式上传日志的类
  * Create a pipeline of filters that get called one after the other.
  * The output of one filter is fed as input to the next.
  * Input: Any

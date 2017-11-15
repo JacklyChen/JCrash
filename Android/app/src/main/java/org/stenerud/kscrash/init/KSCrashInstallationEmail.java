@@ -1,58 +1,67 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.init;
 
 import android.content.Context;
+
+import org.stenerud.kscrash.filter.KSCrashReportFilter;
+import org.stenerud.kscrash.filter.KSCrashReportFilterCreateTempFiles;
+import org.stenerud.kscrash.filter.KSCrashReportFilterDeleteFiles;
+import org.stenerud.kscrash.filter.KSCrashReportFilterEmail;
+import org.stenerud.kscrash.filter.KSCrashReportFilterGZipCompress;
+import org.stenerud.kscrash.filter.KSCrashReportFilterJSONEncode;
 
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
 
-
-
-
 /**
+ * 通过邮件来发送日志
  * Installation to send reports as attachments over email.
- *
  * Requires the following XML file changes:
- *
  * Modify AndroidManifest.xml:
- *    <application>
- *        ...
- *        <provider
- *            android:name="android.support.v4.content.FileProvider"
- *            android:authorities="${applicationId}.provider"
- *            android:exported="false"
- *            android:grantUriPermissions="true">
- *            <meta-data
- *                android:name="android.support.FILE_PROVIDER_PATHS"
- *                android:resource="@xml/provider_paths"/>
- *        </provider>
- *
+ * <application>
+ * ...
+ * <provider
+ * android:name="android.support.v4.content.FileProvider"
+ * android:authorities="${applicationId}.provider"
+ * android:exported="false"
+ * android:grantUriPermissions="true">
+ * <meta-data
+ * android:name="android.support.FILE_PROVIDER_PATHS"
+ * android:resource="@xml/provider_paths"/>
+ * </provider>
+ * <p>
  * Create res/xml/provider_paths.xml:
- *    <?xml version="1.0" encoding="utf-8"?>
- *    <paths xmlns:android="http://schemas.android.com/apk/res/android">
- *        <external-path name="external_files" path="."/>
- *    </paths>
+ * <?xml version="1.0" encoding="utf-8"?>
+ * <paths xmlns:android="http://schemas.android.com/apk/res/android">
+ * <external-path name="external_files" path="."/>
+ * </paths>
  */
 public class KSCrashInstallationEmail extends KSCrashInstallation {
-    private static List<KSCrashReportFilter> generateFilters(Context context, List<String> recipients, String subject, String message) {
+
+    private static List<KSCrashReportFilter> generateFilters(Context context, List<String> recipients,
+                                                             String subject, String message) {
         List<KSCrashReportFilter> reportFilters = new LinkedList<KSCrashReportFilter>();
         reportFilters.add(new KSCrashReportFilterJSONEncode(4));
         reportFilters.add(new KSCrashReportFilterGZipCompress());
-        reportFilters.add(new KSCrashReportFilterCreateTempFiles(new File(context.getCacheDir(), "temp"), "report", "gz"));
+        reportFilters.add(new KSCrashReportFilterCreateTempFiles(new File(context.getCacheDir(), "temp"),
+                "report", "gz"));
         reportFilters.add(new KSCrashReportFilterEmail(context, recipients, subject, message));
         reportFilters.add(new KSCrashReportFilterDeleteFiles());
 
         return reportFilters;
     }
+
     private static List<String> toList(String value) {
         List list = new LinkedList();
         list.add(value);
         return list;
     }
+
     private static String getDefaultSubject(Context context) {
         return context.getApplicationInfo().processName + " has crashed";
     }
+
     private static String getDefaultMessage(Context context) {
         return context.getApplicationInfo().processName + " has crashed.\nReports are attached to this email.";
     }
@@ -60,10 +69,10 @@ public class KSCrashInstallationEmail extends KSCrashInstallation {
     /**
      * Constructor.
      *
-     * @param context A context that can open an email intent.
+     * @param context    A context that can open an email intent.
      * @param recipients A list of recipients for the email.
-     * @param subject The subject of the message.
-     * @param message An optional message body to send in addition to the attachments.
+     * @param subject    The subject of the message.
+     * @param message    An optional message body to send in addition to the attachments.
      */
     public KSCrashInstallationEmail(Context context, List<String> recipients, String subject, String message) {
         super(context, generateFilters(context, recipients, subject, message));
@@ -72,10 +81,10 @@ public class KSCrashInstallationEmail extends KSCrashInstallation {
     /**
      * Constructor.
      *
-     * @param context A context that can open an email intent.
+     * @param context   A context that can open an email intent.
      * @param recipient The recipient's email address.
-     * @param subject The subject of the message.
-     * @param message An optional message body to send in addition to the attachments.
+     * @param subject   The subject of the message.
+     * @param message   An optional message body to send in addition to the attachments.
      */
     public KSCrashInstallationEmail(Context context, String recipient, String subject, String message) {
         this(context, toList(recipient), subject, message);
@@ -84,7 +93,7 @@ public class KSCrashInstallationEmail extends KSCrashInstallation {
     /**
      * Constructor. Gives a default subject and message.
      *
-     * @param context A context that can open an email intent.
+     * @param context    A context that can open an email intent.
      * @param recipients A list of recipients for the email.
      */
     public KSCrashInstallationEmail(Context context, List<String> recipients) {
@@ -94,7 +103,7 @@ public class KSCrashInstallationEmail extends KSCrashInstallation {
     /**
      * Constructor. Gives a default subject and message.
      *
-     * @param context A context that can open an email intent.
+     * @param context   A context that can open an email intent.
      * @param recipient The recipient's email address.
      */
     public KSCrashInstallationEmail(Context context, String recipient) {

@@ -1,8 +1,13 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.init;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import org.stenerud.kscrash.KSCrash;
+import org.stenerud.kscrash.filter.KSCrashReportFilter;
+import org.stenerud.kscrash.filter.KSCrashReportFilterPipeline;
+import org.stenerud.kscrash.filter.KSCrashReportFilteringFailedException;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,6 +15,7 @@ import java.util.List;
 
 
 /**
+ * 初始化操作工具类
  * The installation is the primary user-facing interface to the crash handling system.
  * A user instantiates an installation, optionally configures it, then calls install to
  * start handling crashes.
@@ -18,24 +24,27 @@ import java.util.List;
  */
 public class KSCrashInstallation {
 
-    private Context context;
+    private Context mContext;
     private List<KSCrashReportFilter> reportFilters;
 
+
+
     public KSCrashInstallation(Context context, List<KSCrashReportFilter> reportFilters) {
-        this.context = context;
+        mContext = context;
         this.reportFilters = reportFilters;
     }
 
-
     /**
      * 初始化
+     *
      * @throws IOException
      */
     public void install() throws IOException {
-        KSCrash.getInstance().install(this.context);
+        KSCrash.getInstance().install(mContext);
     }
 
     /**
+     * 发送crash日志
      * More generalized version of this method for debugging purposes. Consider using one of the
      * other two forms instead.
      *
@@ -61,12 +70,12 @@ public class KSCrashInstallation {
                         pipeline.filterReports(reports, new KSCrashReportFilter.CompletionCallback() {
                             @Override
                             public void onCompletion(List filteredReports) throws KSCrashReportFilteringFailedException {
-                                Log.i("Crash Reporter", "Sent " + reports.size() + " reports.");
+                                Log.i("Crash Reporter", "--------Sent " + reports.size() + " reports.");
                                 lastCallback.onCompletion(reports);
                             }
                         });
                     } catch (KSCrashReportFilteringFailedException e) {
-                        Log.e("KSCrash", "Error sending reports", e);
+                        Log.e("KSCrash", "--------Error sending reports", e);
                     }
                     return null;
                 }
@@ -76,8 +85,19 @@ public class KSCrashInstallation {
         }
     }
 
+
     /**
-     * Send all outstanding crash reports, with a callback.
+     * 发送所有的错误日志，默认成功后删除日志 <p>
+     * Send all reports, deleting them from disk upon successful completion.
+     */
+    public void sendOutstandingReports() {
+        sendOutstandingReports(null);
+    }
+
+    /**
+     * 发送所有的错误日志，支持自定义发送后的回调<p>
+     *
+     * Send all crash reports, with a callback.<p>
      *
      * @param callback Called upon successful completion (null = default handler - delete all reports).
      */
@@ -85,10 +105,4 @@ public class KSCrashInstallation {
         sendOutstandingReports(KSCrash.getInstance().getAllReports(), callback);
     }
 
-    /**
-     * Send all outstanding reports, deleting them from disk upon successful completion.
-     */
-    public void sendOutstandingReports() {
-        sendOutstandingReports(null);
-    }
 }

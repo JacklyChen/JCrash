@@ -1,9 +1,11 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.filter;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.content.FileProvider;
+
+import org.stenerud.kscrash.BuildConfig;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -14,9 +16,10 @@ import java.util.List;
 
 
 /**
- * Send files over email.
+ * 通过邮件来发送crash文件
  */
 public class KSCrashReportFilterEmail implements KSCrashReportFilter {
+
     private Context context;
     private List<String> recipients;
     private String subject;

@@ -1,4 +1,6 @@
-package org.stenerud.kscrash;
+package org.stenerud.kscrash.filter;
+
+import org.stenerud.kscrash.MultipartPostBody;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,7 +16,7 @@ import java.util.Map;
 
 
 /**
- * Send reports over HTTP.
+ * 通过HTTP接口发送crash日志.
  *
  * Reports will be given file names of the form:
  *     [prefix]-[index].[extension]

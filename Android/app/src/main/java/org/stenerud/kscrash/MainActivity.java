@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import org.json.JSONObject;
+import org.stenerud.kscrash.filter.KSCrashReportFilter;
+import org.stenerud.kscrash.filter.KSCrashReportFilteringFailedException;
+import org.stenerud.kscrash.init.KSCrashInstallation;
+import org.stenerud.kscrash.init.KSCrashInstallationStandard;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
+            //todo 日志上传服务器
             KSCrashInstallation installation = new KSCrashInstallationStandard(this,
                     new URL("http://10.0.2.2:5000/crashreport"));
 //            KSCrashInstallation installation = new KSCrashInstallationEmail(this, "nobody@nowhere.com");
@@ -35,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         final Button javaButton = (Button) findViewById(R.id.button_java);
         javaButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                sendFakeReports();
                 throw new IllegalArgumentException("Argument was illegal or something");
-//                sendFakeReports();
             }
         });
 
@@ -61,21 +66,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
+     * 上传假数据
      */
-    public native String stringFromTimestamp(long timestamp);
-    private native void causeNativeCrash();
-    private native void causeCPPException();
-
-
     private void sendFakeReports() {
         try {
+            //todo 日志上传服务器
             List reports = new LinkedList();
             Map report = new HashMap();
             report.put("test", "a value");
             reports.add(new JSONObject(report));
             URL url = new URL("http://10.0.2.2:5000/crashreport");
+            //封装网络请求
             KSCrashInstallation installation = new KSCrashInstallationStandard(this, url);
             installation.sendOutstandingReports(reports, new KSCrashReportFilter.CompletionCallback() {
                 @Override
@@ -87,4 +88,15 @@ public class MainActivity extends AppCompatActivity {
             Log.e("MainActivity", "Error sending fake reports", e);
         }
     }
+
+
+    /**
+     * A native method that is implemented by the 'native-lib' native library,
+     * which is packaged with this application.
+     */
+    public native String stringFromTimestamp(long timestamp);
+    private native void causeNativeCrash();
+    private native void causeCPPException();
+
+
 }
