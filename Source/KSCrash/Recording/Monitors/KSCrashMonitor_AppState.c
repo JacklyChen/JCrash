@@ -412,6 +412,9 @@ void kscrashstate_notifyAppTerminate(void)
     }
 }
 
+/**
+ * 通知CrashSDK应用崩溃
+ */
 void kscrashstate_notifyAppCrash(void)
 {
     if(g_isEnabled)
