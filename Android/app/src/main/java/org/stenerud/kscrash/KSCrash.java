@@ -8,6 +8,8 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +21,27 @@ import java.util.Map;
 public enum KSCrash {
 
     INSTANCE;
+
+    /**
+     * 用户自定义处理crash的接口
+     */
+    public interface IDealWithCrash{
+
+        /**
+         * 处理crash日志的回调接口
+         * @param summary 异常的精简信息
+         * @param detail  异常的详细信息
+         */
+        void dealWithCrash(Throwable summary, String detail);
+    }
+
+    private IDealWithCrash mIDealWithCrash;
+
+    public KSCrash setIDealWithCrash(IDealWithCrash iDealWithCrash) {
+        this.mIDealWithCrash = iDealWithCrash;
+        return this;
+    }
+
 
     public enum MonitorType {
         // Note: This must be kept in sync with KSCrashMonitorType.h
@@ -124,33 +147,51 @@ public enum KSCrash {
     }
 
     /**
-     * Report a Java exception.
-     *
-     * @param exception The exception.
+     * todo 上报java异常到服务器
+     * @param throwable The exception.
      */
-    public void reportJavaException(Throwable exception) {
-        try {
-            JSONArray array = new JSONArray();
-            for (StackTraceElement element : exception.getStackTrace()) {
-                JSONObject object = new JSONObject();
-                object.put("file", element.getFileName());
-                object.put("line", element.getLineNumber());
-                object.put("class", element.getClassName());
-                object.put("method", element.getMethodName());
-                object.put("native", element.isNativeMethod());
-                array.put(object);
+    public void reportJavaException(Throwable throwable) {
+        if(mIDealWithCrash != null){   //有自定义处理异常
+            mIDealWithCrash.dealWithCrash(throwable, getExceptionTrace(throwable));
+        }else{  //CrashSDK默认处理异常
+            try {
+                JSONArray array = new JSONArray();
+                for (StackTraceElement element : throwable.getStackTrace()) {
+                    JSONObject object = new JSONObject();
+                    object.put("file", element.getFileName());
+                    object.put("line", element.getLineNumber());
+                    object.put("class", element.getClassName());
+                    object.put("method", element.getMethodName());
+                    object.put("native", element.isNativeMethod());
+                    array.put(object);
+                }
+                reportUserException(throwable.getClass().getName(),
+                        throwable.getMessage(),
+                        "java",
+                        throwable.getStackTrace()[0].getFileName(),
+                        throwable.getStackTrace()[0].getLineNumber(),
+                        array,
+                        false,
+                        false);
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-            reportUserException(exception.getClass().getName(),
-                    exception.getMessage(),
-                    "java",
-                    exception.getStackTrace()[0].getFileName(),
-                    exception.getStackTrace()[0].getLineNumber(),
-                    array,
-                    false,
-                    false);
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
+    }
+
+    /**
+     * log输出日志
+     * @param throwable
+     * @return
+     */
+    public static String getExceptionTrace(Throwable throwable) {
+        if (throwable != null) {
+            StringWriter stringWriter = new StringWriter();
+            PrintWriter printWriter = new PrintWriter(stringWriter);
+            throwable.printStackTrace(printWriter);
+            return stringWriter.toString();
+        }
+        return "No Exception";
     }
 
     /**
