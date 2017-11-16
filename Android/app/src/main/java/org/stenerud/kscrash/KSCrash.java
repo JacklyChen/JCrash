@@ -6,10 +6,17 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.stenerud.kscrash.asynctask.SaveCrashEventTask;
+import org.stenerud.kscrash.asynctask.SaveDeviceInfoTask;
+import org.stenerud.kscrash.bean.CrashEvent;
+import org.stenerud.kscrash.bean.DeviceInfo;
+import org.stenerud.kscrash.db.DBManager;
+import org.stenerud.kscrash.utils.DeviceUtils;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -21,12 +28,43 @@ import java.util.Map;
 /**
  * CrashSDK的操作工具类
  */
-public enum KSCrash {
+public class KSCrash {
 
-    INSTANCE;
+    private static Context mContext;
+    private static int sTaskId, sAppId;
+    private static String sTaskVersion, sChannel;
 
 
-    private IDealWithCrash mIDealWithCrash;
+
+
+    private static KSCrash INSTANCE = new KSCrash();
+
+    private KSCrash(){}
+
+    public static KSCrash getInstance(Context context, int taskId, int appId,
+                                      String taskVersion, String channel) {
+        mContext = context;
+        sTaskId = taskId;
+        sAppId = appId;
+        sTaskVersion = taskVersion;
+        sChannel = channel;
+        return INSTANCE;
+    }
+
+
+    private final static String JAVA_CRASH = "1.1", NDK_CRASH = "1.2", ANR = "1.3";
+
+    private final String TAG = "KSCrash";
+    private IDealWithCrash mIDealWithCrash = new IDealWithCrash() {
+        @Override
+        public void dealWithJavaCrash(Throwable summary, String detail) {
+            CrashEvent crashEvent = new CrashEvent(summary.toString(), detail);
+            crashEvent.setLogType(JAVA_CRASH);
+            //未能正常执行异步任务
+            new SaveCrashEventTask(mContext, crashEvent, sTaskId, sAppId, sTaskVersion, sChannel).execute();
+        }
+    };
+
 
     public KSCrash setIDealWithCrash(IDealWithCrash iDealWithCrash) {
         this.mIDealWithCrash = iDealWithCrash;
@@ -70,9 +108,6 @@ public enum KSCrash {
         initJNI();
     }
 
-    public static KSCrash getInstance() {
-        return INSTANCE;
-    }
 
     private static Thread.UncaughtExceptionHandler oldUncaughtExceptionHandler;
 
@@ -80,10 +115,11 @@ public enum KSCrash {
 
     /**
      * Install the crash reporter.
-     *
-     * @param context The application context.
      */
-    public void install(Context context) throws IOException {
+    public void install() throws IOException, SQLException {
+        Log.d(TAG, "KSCrash ------- install");
+        initDB();
+
         //todo 初始化jni异常的监听
         //String appName = context.getApplicationInfo().processName;
         //File installDir = new File(context.getCacheDir().getAbsolutePath(), "KSCrash");
@@ -93,11 +129,29 @@ public enum KSCrash {
         oldUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
-            public void uncaughtException(Thread t, Throwable e) {   //若有其它的第三方处理则抛出（如OneSDK）
+            public void uncaughtException(Thread t, Throwable e) {
                 KSCrash.this.reportJavaException(e);
-                KSCrash.oldUncaughtExceptionHandler.uncaughtException(t, e);
+                //todo 若有其它的第三方处理则抛出（如OneSDK）
+                //KSCrash.oldUncaughtExceptionHandler.uncaughtException(t, e);
             }
         });
+    }
+
+    /**
+     * 初始化数据库
+     * @throws IOException
+     * @throws SQLException
+     */
+    private void initDB() throws IOException, SQLException {
+        DBManager.getInstance(mContext).registerDB();
+        String deviceId = DeviceUtils.getInstance(mContext).getDeviceId();
+        String deviceType = DeviceUtils.getDeviceType();
+        String deviceModel = DeviceUtils.getDeviceModel();
+        String deviceSys = DeviceUtils.getDeviceSys();
+        String mac = DeviceUtils.getMac();
+
+        DeviceInfo deviceInfo = new DeviceInfo(deviceId, deviceType, deviceModel, deviceSys, mac);
+        new SaveDeviceInfoTask(mContext,deviceInfo).execute();
     }
 
     /**

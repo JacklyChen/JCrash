@@ -6,8 +6,7 @@ import org.stenerud.kscrash.IDealWithCrash;
 import org.stenerud.kscrash.KSCrash;
 
 import java.io.IOException;
-
-
+import java.sql.SQLException;
 
 
 /**
@@ -21,20 +20,28 @@ public enum KSCrashInstallationLocal {
 
     INSTANCE;
 
+    private KSCrash mKSCrash;
+
     /**
      * 初始化
      * @throws IOException
      */
-    public void install(Context context) throws IOException {
-        KSCrash.getInstance().install(context);
+    public void install(Context context, int taskId, int appId, String taskVersion, String channel)
+            throws IOException, SQLException {
+        mKSCrash = KSCrash.getInstance(context, taskId, appId, taskVersion, channel);
+        mKSCrash.install();
     }
 
     /**
      * 设置自定义处理crash
      * @param iDealWithCrash
      */
-    public void setIDealWithCrash(IDealWithCrash iDealWithCrash){
-        KSCrash.getInstance().setIDealWithCrash(iDealWithCrash);
+    public void setIDealWithCrash(IDealWithCrash iDealWithCrash) throws IOException {
+        if(mKSCrash == null){
+            throw new RuntimeException("first install mKSCrash is null!!!");
+        }else{
+            mKSCrash.setIDealWithCrash(iDealWithCrash);
+        }
     }
 
 }

@@ -10,6 +10,7 @@ import org.stenerud.kscrash.filter.KSCrashReportFilterPipeline;
 import org.stenerud.kscrash.filter.KSCrashReportFilteringFailedException;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 
@@ -41,8 +42,9 @@ public class KSCrashInstallation {
      *
      * @throws IOException
      */
-    public void install() throws IOException {
-        KSCrash.getInstance().install(mContext);
+    public void install(int taskId, int appId, String taskVersion, String channel)
+            throws IOException, SQLException {
+        KSCrash.getInstance(mContext, taskId, appId, taskVersion, channel).install();
     }
 
     /**
@@ -59,7 +61,7 @@ public class KSCrashInstallation {
                 callback = new KSCrashReportFilter.CompletionCallback() {
                     @Override
                     public void onCompletion(List reports) throws KSCrashReportFilteringFailedException {
-                        KSCrash.getInstance().deleteAllReports();
+                        //KSCrash.getInstance().deleteAllReports();
                     }
                 };
             }
@@ -104,7 +106,7 @@ public class KSCrashInstallation {
      * @param callback Called upon successful completion (null = default handler - delete all reports).
      */
     public void sendOutstandingReports(KSCrashReportFilter.CompletionCallback callback) {
-        sendOutstandingReports(KSCrash.getInstance().getAllReports(), callback);
+        //sendOutstandingReports(KSCrash.getInstance().getAllReports(), callback);
     }
 
 }
