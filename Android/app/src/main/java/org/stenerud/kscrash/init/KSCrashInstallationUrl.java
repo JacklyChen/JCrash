@@ -13,18 +13,17 @@ import java.util.List;
 
 
 
-
 /**
- * 通过http请求，接口上传crash日志
+ * 通过http请求，上传crash日志到对应的接口
  */
-public class KSCrashInstallationStandard extends KSCrashInstallation {
+public class KSCrashInstallationUrl extends KSCrashInstallation {
 
     /**
      * 构造方法
      * @param context A context.
      * @param url The URL to post the reports to.
      */
-    public KSCrashInstallationStandard(Context context, URL url) {
+    public KSCrashInstallationUrl(Context context, URL url) {
         super(context, generateFilters(url));
     }
 
