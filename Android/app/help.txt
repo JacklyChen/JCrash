@@ -3,7 +3,7 @@
 2、app的build.gradle文件改成 apply plugin: 'com.android.library'；
    注释掉applicationId "org.stenerud.kscrash"。
 2、到app目录下，执行gradle makeJar命令。
-3、在build/libs目录下产生CrashSDK.jar
+3、在app/build/libs目录下产生CrashSDK.jar
 
 
 
