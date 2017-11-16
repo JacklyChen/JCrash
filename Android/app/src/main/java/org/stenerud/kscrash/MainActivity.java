@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
-            //todo 日志上传服务器
+            //日志本地处理
             KSCrashInstallationLocal.INSTANCE.install(MainActivity.this);
             //统计SDK拿到后进行封装符合格式的数据并进行存储
             KSCrashInstallationLocal.INSTANCE.setIDealWithCrash(new IDealWithCrash(){  //属于耗时操作
