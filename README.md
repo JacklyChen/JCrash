@@ -86,17 +86,17 @@ be useful for other purposes, so I've exposed an API for it.
 
 
 #### 具体使用
+当前版本的异常信息会被记录到本地数据库中。    
+        int taskId = 1;
+        int appId = 1000;
+        String taskVersion = "1.0.0";
+        String channel = "Lily";
+
         try {  //在处理native异常时可能会跑IOException
             //日志本地处理
-            KSCrashInstallationLocal.INSTANCE.install(MainActivity.this);
-            //统计SDK拿到后进行封装符合格式的数据并进行存储
-            KSCrashInstallationLocal.INSTANCE.setIDealWithCrash(new IDealWithCrash(){  //属于耗时操作
-                @Override
-                public void dealWithCrash(Throwable summary, String detail) {
-                    Log.e(TAG, "dealWithCrash summary----------" + summary.toString());
-                    Log.e(TAG, "dealWithCrash detail----------" + detail);
-                }
-            });
+            KSCrashInstallationLocal.INSTANCE.install(MainActivity.this, taskId, appId, taskVersion, channel);
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch(SQLException e){
             e.printStackTrace();
         }
