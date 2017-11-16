@@ -145,7 +145,7 @@ public enum KSCrash {
      */
     public void reportJavaException(Throwable throwable) {
         if(mIDealWithCrash != null){   //有自定义处理异常
-            mIDealWithCrash.dealWithCrash(throwable, getExceptionTrace(throwable));
+            mIDealWithCrash.dealWithJavaCrash(throwable, getExceptionTrace(throwable));
         }else{  //CrashSDK默认处理异常
             try {
                 JSONArray array = new JSONArray();

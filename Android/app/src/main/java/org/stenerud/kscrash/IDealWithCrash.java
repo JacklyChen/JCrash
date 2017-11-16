@@ -11,6 +11,6 @@ public interface IDealWithCrash{
      * @param summary 异常的精简信息
      * @param detail  异常的详细信息
      */
-    void dealWithCrash(Throwable summary, String detail);
+    void dealWithJavaCrash(Throwable summary, String detail);
 }
 
