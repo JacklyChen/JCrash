@@ -1,0 +1,14 @@
+一、打CrashSDK.jar
+1、删除MainActivity.java和activity_main.xml和AndroidManifest.xml中的.MainActivity节点。
+2、app的build.gradle文件改成 apply plugin: 'com.android.library'；
+   打开applicationId "org.stenerud.kscrash"。
+2、到app目录下，执行gradle makeJar命令。
+3、在build/libs目录下产生CrashSDK.jar
+
+
+
+二、运行CrashSDK的对应demo
+1、恢复MainActivity.java和activity_main.xml和AndroidManifest.xml中的.MainActivity节点。
+2、app的build.gradle文件改成 apply plugin: 'com.android.application'；
+   注释掉applicationId "org.stenerud.kscrash"
+3、运行程序。

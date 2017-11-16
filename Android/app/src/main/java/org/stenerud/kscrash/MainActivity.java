@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //KSCrashInstallation installation = new KSCrashInstallationEmail(this, "nobody@nowhere.com");
             installation.install();
             //统计SDK拿到后进行封装符合格式的数据并进行存储
-            installation.setIDealWithCrash(new KSCrash.IDealWithCrash(){  //属于耗时操作
+            installation.setIDealWithCrash(new IDealWithCrash(){  //属于耗时操作
                 @Override
                 public void dealWithCrash(Throwable summary, String detail) {
                     Log.e(TAG, "dealWithCrash summary----------" + summary.toString());

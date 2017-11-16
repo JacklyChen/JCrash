@@ -1,14 +1,16 @@
-
 //打混淆包时
-apply plugin: 'com.android.library'
-
+//apply plugin: 'com.android.library'
+//跑demo时
+apply plugin: 'com.android.application'
 
 
 android {
     compileSdkVersion 23
     buildToolsVersion '25.0.0'
     defaultConfig {
-        minSdkVersion 9   //jenkins服务器打包
+        //跑demo时打开
+        applicationId "org.stenerud.kscrash"
+        minSdkVersion 9
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
