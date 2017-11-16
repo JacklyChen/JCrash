@@ -7,13 +7,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+
+
 
 
 /**
@@ -171,7 +173,7 @@ public enum KSCrash {
     }
 
     /**
-     * log输出日志
+     * 输出异常的详细日志
      * @param throwable
      * @return
      */
@@ -181,8 +183,9 @@ public enum KSCrash {
             PrintWriter printWriter = new PrintWriter(stringWriter);
             throwable.printStackTrace(printWriter);
             return stringWriter.toString();
+        }else{
+            return "No Exception";
         }
-        return "No Exception";
     }
 
     /**
