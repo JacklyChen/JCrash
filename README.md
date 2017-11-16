@@ -81,4 +81,22 @@ Trade off: Custom crash handling code, but you must be careful what you put in i
 
 This takes whatever JCrash would have printed to the console, and writes it
 to a file instead. I mostly use this for debugging JCrash itself, but it could
-be useful for other purposes, so I've exposed an API for it.
+be useful for other purposes, so I've exposed an API for it.  
+
+
+
+#### 具体使用
+        try {  //在处理native异常时可能会跑IOException
+            //日志本地处理
+            KSCrashInstallationLocal.INSTANCE.install(MainActivity.this);
+            //统计SDK拿到后进行封装符合格式的数据并进行存储
+            KSCrashInstallationLocal.INSTANCE.setIDealWithCrash(new IDealWithCrash(){  //属于耗时操作
+                @Override
+                public void dealWithCrash(Throwable summary, String detail) {
+                    Log.e(TAG, "dealWithCrash summary----------" + summary.toString());
+                    Log.e(TAG, "dealWithCrash detail----------" + detail);
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
