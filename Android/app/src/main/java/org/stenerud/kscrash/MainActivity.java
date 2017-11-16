@@ -11,7 +11,8 @@ import org.json.JSONObject;
 import org.stenerud.kscrash.filter.KSCrashReportFilter;
 import org.stenerud.kscrash.filter.KSCrashReportFilteringFailedException;
 import org.stenerud.kscrash.init.KSCrashInstallation;
-import org.stenerud.kscrash.init.KSCrashInstallationStandard;
+import org.stenerud.kscrash.init.KSCrashInstallationLocal;
+import org.stenerud.kscrash.init.KSCrashInstallationUrl;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,19 +35,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         try {
             //todo 日志上传服务器
-            KSCrashInstallation installation = new KSCrashInstallationStandard(this,
-                    new URL("http://10.0.2.2:5000/crashreport"));
-            //KSCrashInstallation installation = new KSCrashInstallationEmail(this, "nobody@nowhere.com");
-            installation.install();
+            KSCrashInstallationLocal.INSTANCE.install(MainActivity.this);
             //统计SDK拿到后进行封装符合格式的数据并进行存储
-            installation.setIDealWithCrash(new IDealWithCrash(){  //属于耗时操作
+            KSCrashInstallationLocal.INSTANCE.setIDealWithCrash(new IDealWithCrash(){  //属于耗时操作
                 @Override
                 public void dealWithCrash(Throwable summary, String detail) {
                     Log.e(TAG, "dealWithCrash summary----------" + summary.toString());
                     Log.e(TAG, "dealWithCrash detail----------" + detail);
                 }
             });
-            installation.sendOutstandingReports();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -96,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             reports.add(new JSONObject(report));
             URL url = new URL("http://10.0.2.2:5000/crashreport");
             //封装网络请求
-            KSCrashInstallation installation = new KSCrashInstallationStandard(this, url);
+            KSCrashInstallation installation = new KSCrashInstallationUrl(this, url);
             installation.sendOutstandingReports(reports, new KSCrashReportFilter.CompletionCallback() {
                 @Override
                 public void onCompletion(List reports) throws KSCrashReportFilteringFailedException {
