@@ -13,7 +13,7 @@ def vsnName = "1.0.0"
 
 
 二、运行CrashSDK的对应demo
-1、恢复MainActivity.java和activity_main.xml和AndroidManifest.xml中的.MainActivity节点。
+1、恢复MainActivity.java和AndroidManifest.xml中的.MainActivity节点。
 2、app的build.gradle文件改成 apply plugin: 'com.android.application'；
    打开applicationId "org.stenerud.kscrash"
 3、运行程序。
