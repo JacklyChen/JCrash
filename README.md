@@ -92,10 +92,10 @@ be useful for other purposes, so I've exposed an API for it.
         String taskVersion = "1.0.0";  
         String channel = "Lily";    
         try {  //在处理native异常时可能会跑IOException  
-            //日志本地处理，存储到DB中
-            KSCrashInstallationLocal.INSTANCE.install(MainActivity.this, taskId, appId, taskVersion, channel);  
-        } catch (IOException e) {  
-            e.printStackTrace();  
-        } catch(SQLException e){  
-            e.printStackTrace();  
-        }
+            //日志本地处理，存储到DB中  
+            KSCrashInstallationLocal.INSTANCE.install(MainActivity.this, taskId, appId, taskVersion, channel);  
+        } catch (IOException e) {    
+            e.printStackTrace();    
+        } catch(SQLException e){    
+            e.printStackTrace();    
+        }  
