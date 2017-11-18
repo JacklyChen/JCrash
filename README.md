@@ -85,8 +85,21 @@ be useful for other purposes, so I've exposed an API for it.
 
 
 
-#### 具体使用
-当前版本的异常信息会被记录到本地数据库中。    
+#### 具体使用     
+        //本地日志处理
+        KSCrashInstallationLocal installation = KSCrashInstallationLocal.INSTANCE;
+        //KSCrashInstallation installation = new KSCrashInstallationEmail(this, "nobody@nowhere.com");
+        installation.install(this);
+        //统计SDK拿到后进行封装符合格式的数据并进行存储
+        installation.setIDealWithCrash(new IDealWithCrash(){  //属于耗时操作
+                @Override
+                public void dealWithJavaCrash(Throwable summary, String detail) {
+                    Log.e(TAG, "dealWithCrash summary----------" + summary.toString());
+                    Log.e(TAG, "dealWithCrash detail----------" + detail);
+                }
+            });  
+        
+        //当前版本的异常信息会被记录到本地数据库中。    
         int taskId = 1;  
         int appId = 1000;  
         String taskVersion = "1.0.0";  
@@ -98,4 +111,4 @@ be useful for other purposes, so I've exposed an API for it.
             e.printStackTrace();    
         } catch(SQLException e){    
             e.printStackTrace();    
-        }  
+        }   
