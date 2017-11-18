@@ -84,14 +84,12 @@ to a file instead. I mostly use this for debugging JCrash itself, but it could
 be useful for other purposes, so I've exposed an API for it.  
 
 
-
-   
 #### 方法调用:   
        //本地日志处理
        KSCrashInstallationLocal installation = KSCrashInstallationLocal.INSTANCE;
         //KSCrashInstallation installation = new KSCrashInstallationEmail(this, "nobody@nowhere.com");
         installation.install(this);
-        //获得后进行封装符合格式的数据并进行存储
+        //获得后进行封装符合格式的数据并进行存储
         installation.setIDealWithCrash(new IDealWithCrash(){  //属于耗时操作
                 @Override
                 public void dealWithJavaCrash(Throwable summary, String detail) {
@@ -115,3 +113,5 @@ be useful for other purposes, so I've exposed an API for it.
         } catch(SQLException e){    
             e.printStackTrace();    
         }   
+   
+
