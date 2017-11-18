@@ -1,7 +1,7 @@
 package org.stenerud.kscrash;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +14,6 @@ import org.stenerud.kscrash.init.KSCrashInstallation;
 import org.stenerud.kscrash.init.KSCrashInstallationLocal;
 import org.stenerud.kscrash.init.KSCrashInstallationStandard;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
-            //todo 日志上传服务器
+            //本地日志处理
             KSCrashInstallationLocal installation = KSCrashInstallationLocal.INSTANCE;
             //KSCrashInstallation installation = new KSCrashInstallationEmail(this, "nobody@nowhere.com");
             installation.install(this);
