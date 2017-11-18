@@ -11,7 +11,6 @@ import java.sql.SQLException;
 
 /**
  * 记录crash日志到本地的工具类
- * 完美世界
  * @Author Jack
  * @Date 2017/11/16 10:27
  * @Copyright:wanmei.com Inc. All rights reserved.
@@ -29,6 +28,11 @@ public enum KSCrashInstallationLocal {
     public void install(Context context, int taskId, int appId, String taskVersion, String channel)
             throws IOException, SQLException {
         mKSCrash = KSCrash.getInstance(context, taskId, appId, taskVersion, channel);
+        mKSCrash.install();
+    }
+
+    public void install(Context context) throws IOException, SQLException {
+        mKSCrash = KSCrash.getInstance(context);
         mKSCrash.install();
     }
 

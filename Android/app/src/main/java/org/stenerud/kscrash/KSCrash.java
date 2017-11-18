@@ -41,6 +41,11 @@ public class KSCrash {
 
     private KSCrash(){}
 
+    public static KSCrash getInstance(Context context){
+        mContext = context;
+        return INSTANCE;
+    }
+
     public static KSCrash getInstance(Context context, int taskId, int appId,
                                       String taskVersion, String channel) {
         mContext = context;
