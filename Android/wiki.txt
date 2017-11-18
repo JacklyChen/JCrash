@@ -1,0 +1,12 @@
+一、运行demo
+1、app的build.gradle
+apply plugin: 'com.android.application'
+
+
+二、打混淆包时
+1、app的build.gradle
+apply plugin: 'com.android.library'
+
+2、删除MainActivity.java、activity_main.xml、AndroidManifest.xml中的MainActivity相关
+
+3、到app目录下执行命令 gradlew makeJar
