@@ -89,7 +89,7 @@ be useful for other purposes, so I've exposed an API for it.
        KSCrashInstallationLocal installation = KSCrashInstallationLocal.INSTANCE;
         //KSCrashInstallation installation = new KSCrashInstallationEmail(this, "nobody@nowhere.com");
         installation.install(this);
-        //获得后进行封装符合格式的数据并进行存储
+        //获得异常的详情和详细信息  
         installation.setIDealWithCrash(new IDealWithCrash(){  //属于耗时操作
                 @Override
                 public void dealWithJavaCrash(Throwable summary, String detail) {
