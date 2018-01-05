@@ -1,5 +1,6 @@
 #include <jni.h>
 #include <string>
+#include <memory.h>
 #include "KSJNI.h"
 #include "KSDate.h"
 #include "KSCrashC.h"
